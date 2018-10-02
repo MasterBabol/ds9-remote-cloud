@@ -11,6 +11,13 @@ import session from 'express-session';
 
 import api from './routes';
 
+import events from 'events';
+
+import http from 'http';
+import io from 'socket.io';
+
+import ds9rcm from './ds9rcm';
+
 const app = express();
 const port = 3000;
 const devPort = 4000;
@@ -27,8 +34,10 @@ app.use(session({
 
 app.use('/', express.static(path.join(__dirname, './../public')));
 
-/* setup routers & static directory */
-app.use('/api', api);
+const ds9rce = new events.EventEmitter();
+app.use('/api', function(req, res, next) {
+    ds9rce.emit("apicall-hook", req, res, next);
+}, api);
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './../public/index.html'));
@@ -41,21 +50,24 @@ app.use(function(err, req, res, next) {
 });
 
 if(process.env.NODE_ENV == 'development') {
-    console.log('Server is running on development mode');
+    console.log('[!] Server is running on development mode');
     const config = require('../webpack.dev.config');
     const compiler = webpack(config);
     const devServer = new WebpackDevServer(compiler, config.devServer);
     devServer.listen(
         devPort, () => {
-            console.log('webpack-dev-server is listening on port', devPort);
+            console.log('[!] webpack-dev-server is listening on port', devPort);
         }
     );
 }
 
-const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+const server = http.createServer(app);
+const ioserv = io(server);
+const ds9rc = ds9rcm(ioserv);
+
+ds9rce.on('apicall-hook', ds9rc);
 
 server.listen(port, function() {
-    console.log('Express is listening on port ' + port);
+    console.log('[!] Express is listening on port ' + port);
 });
 
