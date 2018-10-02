@@ -1,3 +1,8 @@
+import low from 'lowdb';
+import fsync from 'lowdb/adapters/FileSync';
+
+const adapter = new fsync('db.json');
+const db = low(adapter);
 
 const inst = function(sockio) {
     setTimeout(ds9_bootstrap, 1000);
