@@ -9,7 +9,7 @@ import bodyParser from 'body-parser'; // PARSE HTML BODY
 
 import session from 'express-session';
 
-import api from './routes';
+import api from './api';
 
 import events from 'events';
 
@@ -32,12 +32,12 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use('/', express.static(path.join(__dirname, './../public')));
-
 const ds9rce = new events.EventEmitter();
 app.use('/api', function(req, res, next) {
     ds9rce.emit("apicall-hook", req, res, next);
 }, api);
+
+app.use('/', express.static(path.join(__dirname, './../public')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './../public/index.html'));
