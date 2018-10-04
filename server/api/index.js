@@ -1,19 +1,16 @@
 import express from 'express';
 import os from 'os';
-import serverStatus from './serverStatus';
-import factorioImage from './factorioImage';
+
+import status from './status';
+import inventory from './inventory';
+import signal from './signal';
+import technology from './technology';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    let apiList = {
-        serverStatus: serverStatus.verb,
-        factorioImage: factorioImage.verb
-    };
-    res.send(apiList);
-});
-
-router.use('/serverStatus', serverStatus.router);
-router.use('/factorioImage', factorioImage.router);
+router.use('/status', status);
+router.use('/inventory', inventory);
+router.use('/signal', signal);
+router.use('/technology', technology);
 
 export default router;

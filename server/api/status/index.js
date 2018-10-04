@@ -3,7 +3,7 @@ import os from 'os';
 
 const router = express.Router();
 
-router.get('*', (req, res, next) => {
+router.get('*', (req, res) => {
     let cpuAvg = os.loadavg();
     let cpuAvg60s = cpuAvg[0];
     let memTotal = os.totalmem();
@@ -14,14 +14,12 @@ router.get('*', (req, res, next) => {
         'memUse%': Number((100 * (memTotal - memFree) / memTotal).toFixed(3)),
         'memTotalMB': Math.floor(memTotal / 1024 / 1024)
     };
-    res.send(serverInfo);
+    
+    res.status(200).send(serverInfo);
 });
 
-const verb = ['get'];
+router.post('*', (req, res) => {
+    res.status(405).end();
+});
 
-const ds9api = {
-    router,
-    verb
-};
-
-export default ds9api;
+export default router;
