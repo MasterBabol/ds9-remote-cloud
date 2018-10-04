@@ -18,7 +18,7 @@ module.exports = {
                 test: /\.js$/,
                 loaders: ['babel?' + JSON.stringify({
                     cacheDirectory: true,
-                    presets: ['es2015', 'react']
+                    presets: ['env', 'react']
                 })],
                 exclude: /node_modules/,
             },

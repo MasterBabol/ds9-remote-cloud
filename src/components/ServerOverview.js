@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid, Col, Row } from 'react-bootstrap';
-import RTChart from 'react-rt-chart';
+import { Grid, Col, Row, Panel } from 'react-bootstrap';
 
 import axios from 'axios';
 
@@ -8,10 +7,19 @@ class ServerOverview extends React.Component {
     constructor(props) {
         super(props);
         this.refreshCallback = null;
+        this.state = {
+            cpuUse: 0,
+            memUse: 0
+        }
+
+        const foo = async function () {}
     }
 
     componentDidMount() {
-        this.refreshCallback = setInterval(() => this.forceUpdate(), 2000);
+        this.update();
+        this.refreshCallback = setInterval(() => {
+            this.update();
+        }, 5000);
     }
 
     componentWillUnmount() {
@@ -19,15 +27,27 @@ class ServerOverview extends React.Component {
             clearInterval(this.refreshCallback);
     }
 
+    update() {
+        axios.get('/api/serverStatus').then((res) => {
+            let cpuUse = res.data['cpuUse%'];
+            let memUse = res.data['memUse%'];
+            this.setState({'cpuUse': cpuUse, 'memUse': memUse});
+        });
+    }
+
     render() {
+        let cpuUse = this.state.cpuUse;
+        let memUse = this.state.memUse;;
+
         let chartData = {
             date: new Date(),
-            'CPU Usage': Math.random(),
-            'Memory Usage': Math.random()
+            'CPU Usage': cpuUse,
+            'Memory Usage': memUse
         };
 
         return (
-            <RTChart fields={['CPU Usage', 'Memory Usage']} data={chartData} />
+            <div>
+            </div>
         );
     }
 };

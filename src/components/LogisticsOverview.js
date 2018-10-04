@@ -1,20 +1,22 @@
 import React from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
-import RTChart from 'react-rt-chart';
 
-class DS9Overview extends React.Component {
+class LogisticsOverview extends React.Component {
     constructor(props) {
         super(props);
         this.refreshCallback = null;
     }
 
     componentDidMount() {
-        this.refreshCallback = setInterval(() => this.forceUpdate(), 2000);
+        this.refreshCallback = setInterval(() => this.update(), 2000);
     }
 
     componentWillUnmount() {
         if (this.refreshCallback)
             clearInterval(this.refreshCallback);
+    }
+
+    update() {
     }
 
     render() {
@@ -25,9 +27,9 @@ class DS9Overview extends React.Component {
         };
 
         return (
-            <RTChart fields={['# of TX Rockets', '# of RX Rockets']} data={chartData} />
+            <div>Not implemented</div>
         );
     }
 };
 
-export default DS9Overview;
+export default LogisticsOverview;

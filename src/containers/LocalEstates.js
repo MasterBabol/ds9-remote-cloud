@@ -13,7 +13,7 @@ class Logistics extends React.Component {
         return (
             <Grid>
                 <Row>
-                    <Col md={6}>asdf</Col>
+                    <Col md={6}>1234</Col>
                 </Row>
             </Grid>
         );

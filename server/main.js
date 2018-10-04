@@ -11,12 +11,7 @@ import session from 'express-session';
 
 import api from './api';
 
-import events from 'events';
-
 import http from 'http';
-import io from 'socket.io';
-
-import ds9rcm from './ds9rcm';
 
 const app = express();
 const port = 3000;
@@ -32,10 +27,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-const ds9rce = new events.EventEmitter();
-app.use('/api', function(req, res, next) {
-    ds9rce.emit("apicall-hook", req, res, next);
-}, api);
+app.use('/api', api);
 
 app.use('/', express.static(path.join(__dirname, './../public')));
 
@@ -62,10 +54,6 @@ if(process.env.NODE_ENV == 'development') {
 }
 
 const server = http.createServer(app);
-const ioserv = io(server);
-const ds9rc = ds9rcm(ioserv);
-
-ds9rce.on('apicall-hook', ds9rc);
 
 server.listen(port, function() {
     console.log('[!] Express is listening on port ' + port);
