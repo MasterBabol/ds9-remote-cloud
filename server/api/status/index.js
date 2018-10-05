@@ -53,8 +53,8 @@ router.get('*', (req, res) => {
     let memFree = os.freemem();
 
     let serverStatus = {
-        'cpuUse%': Number((100 * cpuAvg60s).toFixed(3)),
-        'memUse%': Number((100 * (memTotal - memFree) / memTotal).toFixed(3)),
+        'cpuUse%': Number((100 * cpuAvg60s).toFixed(1)),
+        'memUse%': Number((100 * (memTotal - memFree) / memTotal).toFixed(1)),
         'memTotalMB': Math.floor(memTotal / 1024 / 1024)
     };
 

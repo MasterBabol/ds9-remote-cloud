@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Col, Row, Panel } from 'react-bootstrap';
+import { Grid, Col, Row, Panel, ProgressBar } from 'react-bootstrap';
 
 import axios from 'axios';
 
@@ -31,26 +31,55 @@ class ServerOverview extends React.Component {
         axios.get('/api/status').then((res) => {
             let cpuUse = res.data['cpuUse%'];
             let memUse = res.data['memUse%'];
-            this.setState({'cpuUse': cpuUse, 'memUse': memUse});
+            let memTotalMB = res.data['memTotalMB'];
+            this.setState({
+                'cpuUse': cpuUse,
+                'memUse': memUse,
+                'memTotalMB': memTotalMB
+            });
         });
+    }
+
+    getBSStyleFromValue(val) {
+        let useStyle;
+        if (val < 25)
+            useStyle = 'info';
+        else if (val < 50)
+            useStyle = 'success';
+        else if (val < 75)
+            useStyle = 'warning';
+        else
+            useStyle = 'danger';
+        return useStyle;
     }
 
     render() {
         let cpuUse = this.state.cpuUse;
-        let memUse = this.state.memUse;;
+        let memUse = this.state.memUse;
+        let memTotalMB = this.state.memTotalMB;
 
-        let chartData = {
-            date: new Date(),
-            'CPU Usage': cpuUse,
-            'Memory Usage': memUse
-        };
+        let cpuUseStyle = this.getBSStyleFromValue(cpuUse);
+        let memUseStyle = this.getBSStyleFromValue(memUse);
 
         return (
             <div>
-                {this.state.cpuUse}
+            <Panel>
+                <Panel.Heading>CPU Utilization</Panel.Heading>
+                <Panel.Body><ProgressBar now={this.state.cpuUse}
+                    label={`${this.state.cpuUse} %`} bsStyle={cpuUseStyle} /></Panel.Body>
+            </Panel>
+            <Panel>
+                <Panel.Heading>Memory Utilization (Total {this.state.memTotalMB} MB)</Panel.Heading>
+                <Panel.Body><ProgressBar now={this.state.memUse}
+                    label={`${this.state.memUse} %`} bsStyle={memUseStyle} /></Panel.Body>
+            </Panel>
             </div>
         );
     }
 };
+
+ServerOverview.defaultProps = {
+    target: ''
+}
 
 export default ServerOverview;

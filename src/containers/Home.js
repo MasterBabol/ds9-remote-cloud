@@ -16,7 +16,7 @@ class Home extends React.Component {
                 <Row>
                     <Col md={12}>
                         <Panel>
-                            <Panel.Heading>Server Overview</Panel.Heading>
+                            <Panel.Heading>Cloud Server Overview</Panel.Heading>
                             <Panel.Body><ServerOverview /></Panel.Body>
                         </Panel>
                     </Col>
