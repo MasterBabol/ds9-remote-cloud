@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Col, Row } from 'react-bootstrap';
+import { Grid, Col, Row, Panel } from 'react-bootstrap';
+import { LocalEstatesDetail } from 'components';
 
 class Logistics extends React.Component {
     constructor(props) {
@@ -13,7 +14,9 @@ class Logistics extends React.Component {
         return (
             <Grid>
                 <Row>
-                    <Col md={6}>1234</Col>
+                    <Col md={12}>
+                        <LocalEstatesDetail />
+                    </Col>
                 </Row>
             </Grid>
         );

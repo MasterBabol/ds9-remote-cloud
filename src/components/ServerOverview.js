@@ -28,7 +28,7 @@ class ServerOverview extends React.Component {
     }
 
     update() {
-        axios.get('/api/serverStatus').then((res) => {
+        axios.get('/api/status').then((res) => {
             let cpuUse = res.data['cpuUse%'];
             let memUse = res.data['memUse%'];
             this.setState({'cpuUse': cpuUse, 'memUse': memUse});
@@ -47,6 +47,7 @@ class ServerOverview extends React.Component {
 
         return (
             <div>
+                {this.state.cpuUse}
             </div>
         );
     }

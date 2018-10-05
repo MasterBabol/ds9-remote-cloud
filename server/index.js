@@ -6,6 +6,9 @@ import WebpackDevServer from 'webpack-dev-server';
 
 import morgan from 'morgan';
 import http from 'http';
+import basicAuth from 'express-basic-auth';
+import low from 'lowdb';
+import FileSync from 'lowdb/adapters/FileSync';
 
 import api from './api';
 
@@ -13,17 +16,37 @@ const app = express();
 const port = 3000;
 const devPort = 4000;
 
-app.use(morgan('dev'));
+const adapter = new FileSync('db.json');
+const db = low(adapter);
 
-app.use('/api', api);
+app.use(morgan('dev'));
+app.use(express.json());
+
+app.use('/api', (req, res, next) => {
+    req.db = db;
+    if (req.method == 'GET')
+        next();
+    else
+        basicAuth({
+            challenge: true,
+            authorizer: (username, password) => {
+                let found = db.get('local-estates').find({ "id": username}).value();
+                return (found && (found.accessToken == password));
+            }
+        })(req, res, next);
+}, api);
 app.use('/', express.static(path.join(__dirname, './../public')));
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './../public/index.html'));
 });
 
 app.use(function(err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send('500 Internal Server Error');
+    if (err.statusCode)
+        res.status(err.statusCode).end();
+    else {
+        console.error(err.stack);
+        res.status(500).send('500 Internal Server Error');
+    }
 });
 
 if(process.env.NODE_ENV == 'development') {
