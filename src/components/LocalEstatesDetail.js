@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Col, Row } from 'react-bootstrap';
+import { Grid, Col, Row, Panel } from 'react-bootstrap';
 import { BootstrapTable,
     TableHeaderColumn } from 'react-bootstrap-table';
 import axios from 'axios';
@@ -9,22 +9,29 @@ class LocalEstatesDetail extends React.Component {
         super(props);
         this.refreshCallback = null;
         this.options = {
+            noDataText: 'There is no local estate to display',
             defaultSortName: 'id',
             defaultSortOrder: 'asc'
         };
         this.state = {
+            mounted: false,
             'local-estates': []
         };
     }
 
     componentDidMount() {
-        this.update();;
         this.refreshCallback = setInterval(() => this.update(), 3000);
     }
 
     componentWillUnmount() {
+        this.state.mounted = false;
         if (this.refreshCallback)
             clearInterval(this.refreshCallback);;
+    }
+
+    componentWillMount() {
+        this.state.mounted = true;
+        this.update();
     }
 
     update() {
@@ -37,29 +44,17 @@ class LocalEstatesDetail extends React.Component {
                     var leStatusResp = await axios.get('/api/status/' + leName);
                     var leStatus = leStatusResp.data;
                     var leDiscovDate = new Date(leStatus['discovered-time']);
-                    var cpuUse = leStatus['cpuUse%'];
-                    var memUse = leStatus['memUse%'];
-
-                    if (cpuUse < 0)
-                        cpuUse = null;
-                    else
-                        cpuUse = cpuUse + ' %';
-                    if (memUse < 0)
-                        memUse = null;
-                    else
-                        memUse = memUse + ' %';
 
                     tableData.push({
                         id: leName,
                         online: leStatus['online'],
-                        discovered: leDiscovDate,
-                        'cpuUse%': cpuUse,
-                        'memUse%': memUse
+                        discovered: leDiscovDate.toLocaleString()
                     });
                 }
-                this.setState({
-                    'local-estates': tableData
-                });
+                if (this.state.mounted)
+                    this.setState({
+                        'local-estates': tableData
+                    });
             }
         });
     }
@@ -68,19 +63,13 @@ class LocalEstatesDetail extends React.Component {
         return (
             <BootstrapTable data={this.state['local-estates']}
                 options={ this.options } striped hover>
-                <TableHeaderColumn isKey dataField='id' width='20em' dataSort>
+                <TableHeaderColumn isKey dataField='id' width='25%' dataSort>
                     Name
                 </TableHeaderColumn>
-                <TableHeaderColumn dataField='online' width='8em' dataSort>
+                <TableHeaderColumn dataField='online' width='18%' dataSort>
                     Online 
                 </TableHeaderColumn>
-                <TableHeaderColumn dataField='cpuUse%' width='8em'>
-                    Cpu Use %
-                </TableHeaderColumn>
-                <TableHeaderColumn dataField='memUse%' width='8em'>
-                    Mem Use %
-                </TableHeaderColumn>
-                <TableHeaderColumn dataField='discovered'>
+                <TableHeaderColumn dataField='discovered' >
                     Last Discovered
                 </TableHeaderColumn>
             </BootstrapTable>

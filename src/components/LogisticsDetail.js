@@ -8,19 +8,28 @@ class LogisticsDetail extends React.Component {
     constructor(props) {
         super(props);
         this.refreshCallback = null;
+        this.options = {
+            noDataText: 'There is no item to display'
+        };
         this.state = {
+            mounted: false,
             inventory: []
         };
     }
 
     componentDidMount() {
-        this.update();
         this.refreshCallback = setInterval(() => this.update(), 3000);
     }
 
     componentWillUnmount() {
+        this.state.mounted = false;
         if (this.refreshCallback)
             clearInterval(this.refreshCallback);
+    }
+
+    componentWillMount() {
+        this.state.mounted = true;
+        this.update();
     }
 
     update() {
@@ -31,19 +40,21 @@ class LogisticsDetail extends React.Component {
                 for (var k of Object.keys(inv)) {
                     tableData.push({
                         name: k,
-                        count: inv[k]
+                        count: Number(inv[k]).toLocaleString()
                     });
                 }
-                this.setState({
-                    inventory: tableData
-                });
+                if (this.state.mounted)
+                    this.setState({
+                        inventory: tableData
+                    });
             }
         });
     }
 
     render() {
         return (
-            <BootstrapTable data={this.state.inventory} striped hover>
+            <BootstrapTable data={this.state.inventory}
+                options={this.options} striped hover>
                 <TableHeaderColumn isKey dataField='name'>
                     Item Name
                 </TableHeaderColumn>

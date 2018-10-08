@@ -8,6 +8,7 @@ class ServerOverview extends React.Component {
         super(props);
         this.refreshCallback = null;
         this.state = {
+            mounted: false,
             cpuUse: 0,
             memUse: 0
         }
@@ -16,13 +17,18 @@ class ServerOverview extends React.Component {
     }
 
     componentDidMount() {
-        this.update();
         this.refreshCallback = setInterval(() => {
             this.update();
         }, 5000);
     }
 
+    componentWillMount() {
+        this.state.mounted = true;
+        this.update();
+    }
+
     componentWillUnmount() {
+        this.state.mounted = false;
         if (this.refreshCallback)
             clearInterval(this.refreshCallback);
     }
@@ -32,11 +38,12 @@ class ServerOverview extends React.Component {
             let cpuUse = res.data['cpuUse%'];
             let memUse = res.data['memUse%'];
             let memTotalMB = res.data['memTotalMB'];
-            this.setState({
-                'cpuUse': cpuUse,
-                'memUse': memUse,
-                'memTotalMB': memTotalMB
-            });
+            if (this.state.mounted)
+                this.setState({
+                    'cpuUse': cpuUse,
+                    'memUse': memUse,
+                    'memTotalMB': memTotalMB
+                });
         });
     }
 

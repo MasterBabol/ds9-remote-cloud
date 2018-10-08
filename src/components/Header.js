@@ -13,7 +13,6 @@ const Header = () => {
                 </Navbar.Brand>
             </Navbar.Header>
             <Nav>
-                <LinkContainer exact to="/"><NavItem>Home</NavItem></LinkContainer>
                 <LinkContainer to="/logistics"><NavItem>Logistics</NavItem></LinkContainer>
                 <LinkContainer to="/localestates"><NavItem>Local Estates</NavItem></LinkContainer>
             </Nav>
