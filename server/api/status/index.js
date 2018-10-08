@@ -19,10 +19,11 @@ router.get('/:id', (req, res) => {
     let leId = req.params.id;
     let le = db.get('local-estates').find({ id: leId });
     if (le.value()) {
-        let leLastStatus = le.defaults(dbDefaultLastStatus).get('last-status').value();
+        let leLastStatus = le.defaults(dbDefaultLastStatus)
+                                .get('last-status').value();
         let leLastDiscovered = leLastStatus['discovered-time'];
         if (leLastDiscovered + 30 * 1000 < new Date().getTime()) {
-            leLastStatus = dbDefaultLastStatus['last-status'];
+            leLastStatus = Object.assign({}, dbDefaultLastStatus['last-status']);
             leLastStatus['discovered-time'] = leLastDiscovered;
         }
         res.status(200).send(leLastStatus);
@@ -35,7 +36,7 @@ router.post('/:id', (req, res) => {
     let leId = req.params.id;
     let le = db.get('local-estates').find({ id: leId });
     if (le.value()) {
-        let newStatus = dbDefaultLastStatus['last-status'];
+        let newStatus = Object.assign({}, dbDefaultLastStatus['last-status']);
         newStatus['discovered-time'] = new Date().getTime();
         newStatus['online'] = true;
         let cpuUse = req.body['cpuUse%'];
