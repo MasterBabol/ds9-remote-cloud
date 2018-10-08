@@ -7,8 +7,10 @@ router.get('/:id', (req, res) => {
     let db = req.db.read();
     let leId = req.params.id;
     let le = db.get('local-estates').find({ id: leId });
-    if (le.value())
+    let leInfoRaw = le.value();
+    if (leInfoRaw) {
         res.status(200).end();
+    }
     else
         res.status(404).end();
 });
@@ -74,6 +76,18 @@ router.delete('/:id', (req, res) => {
         }
     } else
         res.status(404).end();
+});
+
+router.get('*', (req, res) => {
+    let db = req.db.read();
+    let les = db.get('local-estates').value();
+    let lesInfo = [];
+    if (les) {
+        for (var le of les) {
+            lesInfo.push(le.id);
+        }
+    }
+    res.status(200).send(lesInfo);
 });
 
 export default router;

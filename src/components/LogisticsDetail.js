@@ -1,13 +1,20 @@
 import React from 'react';
-import { Grid, Col, Row, Table } from 'react-bootstrap';
+import { Grid, Col, Row } from 'react-bootstrap';
+import { BootstrapTable,
+    TableHeaderColumn } from 'react-bootstrap-table';
+import axios from 'axios';
 
 class LogisticsDetail extends React.Component {
     constructor(props) {
         super(props);
         this.refreshCallback = null;
+        this.state = {
+            inventory: []
+        };
     }
 
     componentDidMount() {
+        this.update();
         this.refreshCallback = setInterval(() => this.update(), 3000);
     }
 
@@ -17,14 +24,33 @@ class LogisticsDetail extends React.Component {
     }
 
     update() {
+        axios.get('/api/inventory').then((res) => {
+            let inv = res.data;
+            if (inv) {
+                let tableData = [];
+                for (var k of Object.keys(inv)) {
+                    tableData.push({
+                        name: k,
+                        count: inv[k]
+                    });
+                }
+                this.setState({
+                    inventory: tableData
+                });
+            }
+        });
     }
 
     render() {
         return (
-            <Table striped bordered condensed hover>
-                <tbody>
-                </tbody>
-            </Table>
+            <BootstrapTable data={this.state.inventory} striped hover>
+                <TableHeaderColumn isKey dataField='name'>
+                    Item Name
+                </TableHeaderColumn>
+                <TableHeaderColumn dataField='count'>
+                    Item Count
+                </TableHeaderColumn>
+            </BootstrapTable>
         );
     }
 };

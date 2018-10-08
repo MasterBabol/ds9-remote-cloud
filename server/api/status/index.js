@@ -1,5 +1,6 @@
 import express from 'express';
 import os from 'os';
+import validator from 'validator';
 
 const router = express.Router();
 
@@ -19,8 +20,11 @@ router.get('/:id', (req, res) => {
     let le = db.get('local-estates').find({ id: leId });
     if (le.value()) {
         let leLastStatus = le.defaults(dbDefaultLastStatus).get('last-status').value();
-        if (leLastStatus['discovered-time'] + 30 * 1000 < new Date().getTime())
+        let leLastDiscovered = leLastStatus['discovered-time'];
+        if (leLastDiscovered + 30 * 1000 < new Date().getTime()) {
             leLastStatus = dbDefaultLastStatus['last-status'];
+            leLastStatus['discovered-time'] = leLastDiscovered;
+        }
         res.status(200).send(leLastStatus);
     } else
         res.status(404).end();
@@ -41,7 +45,12 @@ router.post('/:id', (req, res) => {
         let memTotalMB = req.body['memTotalMB'];
         newStatus['memTotalMB'] = (memTotalMB)?memTotalMB:-1;
         le.set('last-status', newStatus).write();
-        res.status(200).end();
+        if (isNaN(cpuUse) ||
+            isNaN(memUse) ||
+            isNaN(memTotalMB))
+            res.status(400).end();
+        else
+            res.status(200).end();
     } else
         res.status(404).end();
 });
