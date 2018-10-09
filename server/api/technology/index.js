@@ -12,9 +12,19 @@ const mergeTechnologies = (dst, src) => {
     let newDst = _.cloneDeep(dst);
     for (var key of Object.keys(src)) {
         if (newDst[key] != undefined) {
-            newDst[key]
+            let res = newDst[key];
+            if (res.researched == false)
+                res.researched = src[key].researched;
+            if (res.level < src[key].level)
+                res.level = src[key].level;
+        } else {
+            newDst[key] = {
+                researched: src[key].researched,
+                level: src[key].level
+            };
         }
     }
+    return newDst;
 };
 
 router.get('/:id', (req, res) => {
@@ -44,8 +54,10 @@ router.post('/:id', (req, res) => {
 
         let newResearches = req.body;
         le.set('researches', newResearches).write();
+        let mergedResearches = mergeTechnologies(gsigs.value(), newResearches);
+        db.set('global-researches', mergedResearches).write();
 
-        res.status(200).send();
+        res.status(200).end();
     }
     else
         res.status(404).end();
@@ -56,7 +68,7 @@ router.get('*', (req, res) => {
     let leId = req.params.id;
     let leGlobalResearches = 
         db.defaults(dbDefaultGlobalResearches).get('global-researches');
-    res.status(200).send(leGlobalResearches);
+    res.status(200).send(leGlobalResearches.value());
 });
 
 export default router;
