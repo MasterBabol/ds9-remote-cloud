@@ -14,6 +14,7 @@ const Header = () => {
             </Navbar.Header>
             <Nav>
                 <LinkContainer to="/logistics"><NavItem>Logistics</NavItem></LinkContainer>
+                <LinkContainer to="/signals"><NavItem>Signals</NavItem></LinkContainer>
                 <LinkContainer to="/localestates"><NavItem>Local Estates</NavItem></LinkContainer>
             </Nav>
         </Navbar>

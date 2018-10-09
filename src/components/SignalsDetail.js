@@ -4,12 +4,12 @@ import { BootstrapTable,
     TableHeaderColumn } from 'react-bootstrap-table';
 import axios from 'axios';
 
-class LogisticsDetail extends React.Component {
+class SignalsDetail extends React.Component {
     constructor(props) {
         super(props);
         this.refreshCallback = null;
         this.options = {
-            noDataText: 'There is no item to display'
+            noDataText: 'There is no signal to display'
         };
         this.state = {
             mounted: false,
@@ -33,7 +33,7 @@ class LogisticsDetail extends React.Component {
     }
 
     update() {
-        axios.get('/api/inventory').then((res) => {
+        axios.get('/api/signal').then((res) => {
             let inv = res.data;
             if (inv) {
                 let tableData = [];
@@ -56,14 +56,14 @@ class LogisticsDetail extends React.Component {
             <BootstrapTable data={this.state.inventory}
                 options={this.options} striped hover>
                 <TableHeaderColumn isKey dataField='name' dataSort>
-                    Item Name
+                    Signal Name
                 </TableHeaderColumn>
                 <TableHeaderColumn dataField='count' dataSort>
-                    Item Count
+                    Signal Count
                 </TableHeaderColumn>
             </BootstrapTable>
         );
     }
 };
 
-export default LogisticsDetail;
+export default SignalsDetail;
