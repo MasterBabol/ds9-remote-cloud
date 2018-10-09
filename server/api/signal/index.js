@@ -63,7 +63,7 @@ router.post('/:id', (req, res) => {
         let added = addSignals(newGsignals, subtracted);
         db.set('global-announced-signals', added).write();
 
-        res.status(200).send(newSignals);
+        res.status(200).end();
     }
     else
         res.status(404).end();

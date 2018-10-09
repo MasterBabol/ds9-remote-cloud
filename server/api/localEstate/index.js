@@ -16,6 +16,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/:id', (req, res) => {
+    if (req.auth.type != 'user') {
+        res.status(403).end();
+        return;
+    }
     let db = req.db.read();
     let leId = req.params.id;
     let les = db.get('local-estates');
@@ -38,9 +42,9 @@ router.post('/:id', (req, res) => {
                 'accessToken': leAccessToken,
                 'type': leType
             }
-            
+
             les.push(newLe).write();
-            
+
             res.status(200).end();
         } catch (e) {
             if (isNaN(e))
@@ -51,22 +55,39 @@ router.post('/:id', (req, res) => {
     }
 });
 
+const subtractSignals = (dst, src) => {
+    let newDst = Object.assign({}, dst);
+    for (var key of Object.keys(src)) {
+        if (newDst[key] != undefined) {
+            newDst[key] -= src[key];
+            if (newDst[key] == 0)
+                delete newDst[key];
+        } else
+            newDst[key] = -src[key];
+    }
+    return newDst;
+};
+
 router.delete('/:id', (req, res) => {
+    if (req.auth.type != 'user') {
+        res.status(403).end();
+        return;
+    }
     let db = req.db.read();
     let leId = req.params.id;
     let les = db.get('local-estates');
     let le = les.find({ id: leId });
     if (le.value()) {
         try {
-            let leAccessToken = req.body.accessToken;
+            let gsigs = db.defaults({ 'global-announced-signals': {} }).get('global-announced-signals');
+            let leSignalsRaw = le.defaults({ 'announced-signals': {} }).get('announced-signals');
+            let leSignals = leSignalsRaw.value();
 
-            if (!leAccessToken)
-                throw 400;
-            if (leAccessToken != le.value()['accessToken'])
-                throw 403;
+            let subtracted = subtractSignals(gsigs.value(), leSignals);
+            db.set('global-announced-signals', subtracted).write();
 
             les.remove({ id: leId }).write();
-            
+
             res.status(200).end();
         } catch (e) {
             if (isNaN(e))

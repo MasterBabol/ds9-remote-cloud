@@ -4,6 +4,7 @@ import path from 'path';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 
+import crypto from 'crypto';
 import morgan from 'morgan';
 import http from 'http';
 import basicAuth from 'express-basic-auth';
@@ -30,8 +31,22 @@ app.use('/api', (req, res, next) => {
         basicAuth({
             challenge: true,
             authorizer: (username, password) => {
-                let found = db.get('local-estates').find({ "id": username}).value();
-                return (found && (found.accessToken == password));
+                let found = db.get('local-estates')
+                    .find({ "id": username }).value();
+
+                if (found && (found.accessToken == password)) {
+                    req.auth.type = 'le';
+                    return true;
+                }
+
+                found = db.get('users').find({ "id": username }).value();
+                if (found && (found.accessToken == 
+                    crypto.createHash('sha512').update(password)
+                    .digest('hex'))) {
+                    req.auth.type = 'user';
+                    return true;
+                }
+                return false;
             }
         })(req, res, next);
 }, api);
