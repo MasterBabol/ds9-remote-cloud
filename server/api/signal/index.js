@@ -14,7 +14,7 @@ const addSignals = (dst, src) => {
             newDst[key] += src[key];
             if (newDst[key] == 0)
                 delete newDst[key];
-        } else
+        } else if(src[key] != 0)
             newDst[key] = src[key];
     }
     return newDst;
