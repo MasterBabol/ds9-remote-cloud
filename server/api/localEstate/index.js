@@ -1,5 +1,6 @@
 import express from 'express';
 import validator from 'validator';
+import sigops from '../signal/sigops';
 
 const router = express.Router();
 
@@ -24,7 +25,9 @@ router.post('/:id', (req, res) => {
     let leId = req.params.id;
     let les = db.get('local-estates');
     let le = les.find({ id: leId });
-    if (le.value())
+    let users = db.get('users');
+    let user = users.find({ id: leId });
+    if (le.value() || user.value())
         res.status(409).end();
     else {
         try {
@@ -55,19 +58,6 @@ router.post('/:id', (req, res) => {
     }
 });
 
-const subtractSignals = (dst, src) => {
-    let newDst = Object.assign({}, dst);
-    for (var key of Object.keys(src)) {
-        if (newDst[key] != undefined) {
-            newDst[key] -= src[key];
-            if (newDst[key] == 0)
-                delete newDst[key];
-        } else
-            newDst[key] = -src[key];
-    }
-    return newDst;
-};
-
 router.delete('/:id', (req, res) => {
     if (req.auth.type != 'user') {
         res.status(403).end();
@@ -83,7 +73,7 @@ router.delete('/:id', (req, res) => {
             let leSignalsRaw = le.defaults({ 'announced-signals': {} }).get('announced-signals');
             let leSignals = leSignalsRaw.value();
 
-            let subtracted = subtractSignals(gsigs.value(), leSignals);
+            let subtracted = sigops.subtractSignals(gsigs.value(), leSignals);
             db.set('global-announced-signals', subtracted).write();
 
             les.remove({ id: leId }).write();
