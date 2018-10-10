@@ -32,7 +32,6 @@ router.post('*', (req, res) => {
 
                 let newCount = have.value() + count;
                 if (newCount < 0) {
-                    console.log(req.query);
                     if ('nonexact' in req.query) {
                         applies[itemName] = -have.value();
                         dbmods.push(globalInv.unset(itemName));
