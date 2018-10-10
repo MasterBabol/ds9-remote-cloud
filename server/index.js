@@ -40,9 +40,7 @@ app.use('/api', (req, res, next) => {
                 }
 
                 found = db.get('users').find({ "id": username }).value();
-                if (found && (found.accessToken == 
-                    crypto.createHash('sha512').update(password)
-                    .digest('hex'))) {
+                if (found && (found.accessToken == password)) {
                     req.auth.type = 'user';
                     return true;
                 }
