@@ -6,7 +6,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <Navbar>
+        <Navbar staticTop={true} inverse={true}>
             <Navbar.Header>
                 <Navbar.Brand>
                     <NavLink exact to="/">Deepspace 9</NavLink>
@@ -16,6 +16,7 @@ const Header = () => {
                 <LinkContainer to="/logistics"><NavItem>Logistics</NavItem></LinkContainer>
                 <LinkContainer to="/signals"><NavItem>Signals</NavItem></LinkContainer>
                 <LinkContainer to="/localestates"><NavItem>Local Estates</NavItem></LinkContainer>
+                <LinkContainer to="/technologies"><NavItem>Technologies</NavItem></LinkContainer>
             </Nav>
         </Navbar>
     );
