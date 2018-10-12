@@ -27,6 +27,7 @@ const mergeTechnologies = (dst, src) => {
     return newDst;
 };
 
+/*
 router.get('/:id', (req, res) => {
     let db = req.db.read();
     let leId = req.params.id;
@@ -40,6 +41,7 @@ router.get('/:id', (req, res) => {
     else
         res.status(404).end();
 });
+*/
 
 router.post('/:id', (req, res) => {
     let db = req.db.read();
@@ -47,13 +49,13 @@ router.post('/:id', (req, res) => {
     let le = db.get('local-estates').find({ id: leId });
     let gsigs = db.defaults(dbDefaultGlobalResearches).get('global-researches');
     if (le.value()) {
-        let leResearchesRaw = le.defaults({
+        /*let leResearchesRaw = le.defaults({
             'researches': {}
         }).get('researches');
-        let leResearches = leResearchesRaw.value();
+        let leResearches = leResearchesRaw.value();*/
 
         let newResearches = req.body;
-        le.set('researches', newResearches).write();
+        /*le.set('researches', newResearches).write();*/
         let mergedResearches = mergeTechnologies(gsigs.value(), newResearches);
         db.set('global-researches', mergedResearches).write();
 

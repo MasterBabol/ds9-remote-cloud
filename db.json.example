@@ -1,0 +1,1741 @@
+{
+  "local-estates": [
+    {
+      "id": "local-estate-0",
+      "accessToken": "le0Secret",
+      "type": "factorio",
+      "last-status": {
+        "discovered-time": 1539369309888,
+        "online": true,
+        "cpuUse%": 12.3,
+        "memUse%": 88.5,
+        "memTotalMB": 7895
+      },
+      "announced-signals": {},
+      "researches": {
+        "automation-2": {
+          "researched": false,
+          "level": 2
+        },
+        "automation-3": {
+          "researched": false,
+          "level": 3
+        },
+        "advanced-electronics-2": {
+          "researched": false,
+          "level": 2
+        },
+        "logistics-2": {
+          "researched": false,
+          "level": 2
+        },
+        "logistics-3": {
+          "researched": false,
+          "level": 3
+        },
+        "braking-force-1": {
+          "researched": false,
+          "level": 1
+        },
+        "braking-force-2": {
+          "researched": false,
+          "level": 2
+        },
+        "braking-force-3": {
+          "researched": false,
+          "level": 3
+        },
+        "braking-force-4": {
+          "researched": false,
+          "level": 4
+        },
+        "braking-force-5": {
+          "researched": false,
+          "level": 5
+        },
+        "braking-force-6": {
+          "researched": false,
+          "level": 6
+        },
+        "braking-force-7": {
+          "researched": false,
+          "level": 7
+        },
+        "advanced-material-processing-2": {
+          "researched": false,
+          "level": 2
+        },
+        "electric-energy-accumulators-1": {
+          "researched": false,
+          "level": 1
+        },
+        "electric-energy-distribution-1": {
+          "researched": false,
+          "level": 1
+        },
+        "electric-energy-distribution-2": {
+          "researched": false,
+          "level": 2
+        },
+        "personal-roboport-equipment-2": {
+          "researched": false,
+          "level": 2
+        },
+        "character-logistic-slots-1": {
+          "researched": false,
+          "level": 1
+        },
+        "character-logistic-slots-2": {
+          "researched": false,
+          "level": 2
+        },
+        "character-logistic-slots-3": {
+          "researched": false,
+          "level": 3
+        },
+        "character-logistic-slots-4": {
+          "researched": false,
+          "level": 4
+        },
+        "character-logistic-slots-5": {
+          "researched": false,
+          "level": 5
+        },
+        "character-logistic-slots-6": {
+          "researched": false,
+          "level": 6
+        },
+        "character-logistic-trash-slots-1": {
+          "researched": false,
+          "level": 1
+        },
+        "worker-robots-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "character-logistic-trash-slots-2": {
+          "researched": false,
+          "level": 2
+        },
+        "worker-robots-speed-2": {
+          "researched": false,
+          "level": 2
+        },
+        "worker-robots-speed-3": {
+          "researched": false,
+          "level": 3
+        },
+        "worker-robots-speed-4": {
+          "researched": false,
+          "level": 4
+        },
+        "mining-productivity-1": {
+          "researched": false,
+          "level": 1
+        },
+        "mining-productivity-12": {
+          "researched": false,
+          "level": 12
+        },
+        "mining-productivity-16": {
+          "researched": false,
+          "level": 16
+        },
+        "mining-productivity-4": {
+          "researched": false,
+          "level": 4
+        },
+        "mining-productivity-8": {
+          "researched": false,
+          "level": 8
+        },
+        "worker-robots-speed-5": {
+          "researched": false,
+          "level": 5
+        },
+        "worker-robots-speed-6": {
+          "researched": false,
+          "level": 6
+        },
+        "worker-robots-storage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "worker-robots-storage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "worker-robots-storage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "research-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "research-speed-2": {
+          "researched": false,
+          "level": 2
+        },
+        "research-speed-3": {
+          "researched": false,
+          "level": 3
+        },
+        "research-speed-4": {
+          "researched": false,
+          "level": 4
+        },
+        "research-speed-5": {
+          "researched": false,
+          "level": 5
+        },
+        "research-speed-6": {
+          "researched": false,
+          "level": 6
+        },
+        "inserter-capacity-bonus-1": {
+          "researched": false,
+          "level": 1
+        },
+        "inserter-capacity-bonus-2": {
+          "researched": false,
+          "level": 2
+        },
+        "inserter-capacity-bonus-3": {
+          "researched": false,
+          "level": 3
+        },
+        "inserter-capacity-bonus-4": {
+          "researched": false,
+          "level": 4
+        },
+        "inserter-capacity-bonus-5": {
+          "researched": false,
+          "level": 5
+        },
+        "inserter-capacity-bonus-6": {
+          "researched": false,
+          "level": 6
+        },
+        "inserter-capacity-bonus-7": {
+          "researched": false,
+          "level": 7
+        },
+        "military-2": {
+          "researched": false,
+          "level": 2
+        },
+        "military-3": {
+          "researched": false,
+          "level": 3
+        },
+        "military-4": {
+          "researched": false,
+          "level": 4
+        },
+        "rocket-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "rocket-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "rocket-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "rocket-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "rocket-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "rocket-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "rocket-damage-7": {
+          "researched": false,
+          "level": 7
+        },
+        "rocket-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "rocket-speed-2": {
+          "researched": false,
+          "level": 2
+        },
+        "rocket-speed-3": {
+          "researched": false,
+          "level": 3
+        },
+        "rocket-speed-4": {
+          "researched": false,
+          "level": 4
+        },
+        "rocket-speed-5": {
+          "researched": false,
+          "level": 5
+        },
+        "rocket-speed-6": {
+          "researched": false,
+          "level": 6
+        },
+        "rocket-speed-7": {
+          "researched": false,
+          "level": 7
+        },
+        "cannon-shell-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "cannon-shell-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "cannon-shell-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "artillery-shell-range-1": {
+          "researched": false,
+          "level": 1
+        },
+        "cannon-shell-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "cannon-shell-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "cannon-shell-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "cannon-shell-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "cannon-shell-speed-2": {
+          "researched": false,
+          "level": 2
+        },
+        "cannon-shell-speed-3": {
+          "researched": false,
+          "level": 3
+        },
+        "cannon-shell-speed-4": {
+          "researched": false,
+          "level": 4
+        },
+        "artillery-shell-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "cannon-shell-speed-5": {
+          "researched": false,
+          "level": 5
+        },
+        "bullet-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "bullet-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "bullet-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "bullet-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "bullet-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "bullet-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "bullet-damage-7": {
+          "researched": false,
+          "level": 7
+        },
+        "bullet-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "bullet-speed-2": {
+          "researched": false,
+          "level": 2
+        },
+        "bullet-speed-3": {
+          "researched": false,
+          "level": 3
+        },
+        "bullet-speed-4": {
+          "researched": false,
+          "level": 4
+        },
+        "bullet-speed-5": {
+          "researched": false,
+          "level": 5
+        },
+        "bullet-speed-6": {
+          "researched": false,
+          "level": 6
+        },
+        "grenade-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "grenade-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "grenade-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "grenade-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "grenade-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "grenade-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "grenade-damage-7": {
+          "researched": false,
+          "level": 7
+        },
+        "laser-turret-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "shotgun-shell-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "laser-turret-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "shotgun-shell-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "laser-turret-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "shotgun-shell-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "laser-turret-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "shotgun-shell-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "laser-turret-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "shotgun-shell-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "laser-turret-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "shotgun-shell-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "shotgun-shell-damage-7": {
+          "researched": false,
+          "level": 7
+        },
+        "laser-turret-damage-7": {
+          "researched": false,
+          "level": 7
+        },
+        "laser-turret-damage-8": {
+          "researched": false,
+          "level": 8
+        },
+        "shotgun-shell-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "laser-turret-speed-1": {
+          "researched": false,
+          "level": 1
+        },
+        "shotgun-shell-speed-2": {
+          "researched": false,
+          "level": 2
+        },
+        "laser-turret-speed-2": {
+          "researched": false,
+          "level": 2
+        },
+        "shotgun-shell-speed-3": {
+          "researched": false,
+          "level": 3
+        },
+        "laser-turret-speed-3": {
+          "researched": false,
+          "level": 3
+        },
+        "shotgun-shell-speed-4": {
+          "researched": false,
+          "level": 4
+        },
+        "laser-turret-speed-4": {
+          "researched": false,
+          "level": 4
+        },
+        "shotgun-shell-speed-5": {
+          "researched": false,
+          "level": 5
+        },
+        "laser-turret-speed-5": {
+          "researched": false,
+          "level": 5
+        },
+        "shotgun-shell-speed-6": {
+          "researched": false,
+          "level": 6
+        },
+        "laser-turret-speed-6": {
+          "researched": false,
+          "level": 6
+        },
+        "laser-turret-speed-7": {
+          "researched": false,
+          "level": 7
+        },
+        "gun-turret-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "gun-turret-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "gun-turret-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "gun-turret-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "gun-turret-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "gun-turret-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "gun-turret-damage-7": {
+          "researched": false,
+          "level": 7
+        },
+        "flamethrower-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "flamethrower-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "flamethrower-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "flamethrower-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "flamethrower-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "flamethrower-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "flamethrower-damage-7": {
+          "researched": false,
+          "level": 7
+        },
+        "combat-robotics-2": {
+          "researched": false,
+          "level": 2
+        },
+        "combat-robotics-3": {
+          "researched": false,
+          "level": 3
+        },
+        "follower-robot-count-1": {
+          "researched": false,
+          "level": 1
+        },
+        "follower-robot-count-2": {
+          "researched": false,
+          "level": 2
+        },
+        "follower-robot-count-3": {
+          "researched": false,
+          "level": 3
+        },
+        "follower-robot-count-4": {
+          "researched": false,
+          "level": 4
+        },
+        "follower-robot-count-5": {
+          "researched": false,
+          "level": 5
+        },
+        "follower-robot-count-6": {
+          "researched": false,
+          "level": 6
+        },
+        "follower-robot-count-7": {
+          "researched": false,
+          "level": 7
+        },
+        "combat-robot-damage-1": {
+          "researched": false,
+          "level": 1
+        },
+        "combat-robot-damage-2": {
+          "researched": false,
+          "level": 2
+        },
+        "combat-robot-damage-3": {
+          "researched": false,
+          "level": 3
+        },
+        "combat-robot-damage-4": {
+          "researched": false,
+          "level": 4
+        },
+        "combat-robot-damage-5": {
+          "researched": false,
+          "level": 5
+        },
+        "combat-robot-damage-6": {
+          "researched": false,
+          "level": 6
+        },
+        "power-armor-2": {
+          "researched": false,
+          "level": 2
+        },
+        "speed-module-2": {
+          "researched": false,
+          "level": 2
+        },
+        "speed-module-3": {
+          "researched": false,
+          "level": 3
+        },
+        "productivity-module-2": {
+          "researched": false,
+          "level": 2
+        },
+        "productivity-module-3": {
+          "researched": false,
+          "level": 3
+        },
+        "effectivity-module-2": {
+          "researched": false,
+          "level": 2
+        },
+        "effectivity-module-3": {
+          "researched": false,
+          "level": 3
+        }
+      }
+    },
+    {
+      "id": "local-estate-1",
+      "accessToken": "le1Secret",
+      "type": "factorio",
+      "last-status": {
+        "discovered-time": 1539351201774,
+        "online": true,
+        "cpuUse%": 23.1,
+        "memUse%": 65.7,
+        "memTotalMB": 16006
+      },
+      "announced-signals": {}
+    }
+  ],
+  "inventory": {
+    "electricity-in-mj": 35619,
+    "rocket-control-unit-tray": 480,
+    "low-density-structure-tray": 480,
+    "rocket-fuel-tray": 480,
+    "iron-plate": 10208,
+    "copper-plate": 10200
+  },
+  "global-announced-signals": {},
+  "global-researches": {
+    "automation": {
+      "researched": true,
+      "level": 1
+    },
+    "automation-2": {
+      "researched": true,
+      "level": 2
+    },
+    "automation-3": {
+      "researched": true,
+      "level": 3
+    },
+    "electronics": {
+      "researched": true,
+      "level": 0
+    },
+    "advanced-electronics": {
+      "researched": true,
+      "level": 0
+    },
+    "advanced-electronics-2": {
+      "researched": true,
+      "level": 2
+    },
+    "circuit-network": {
+      "researched": true,
+      "level": 0
+    },
+    "explosives": {
+      "researched": true,
+      "level": 0
+    },
+    "logistics": {
+      "researched": true,
+      "level": 0
+    },
+    "logistics-2": {
+      "researched": true,
+      "level": 2
+    },
+    "logistics-3": {
+      "researched": true,
+      "level": 3
+    },
+    "optics": {
+      "researched": true,
+      "level": 0
+    },
+    "laser": {
+      "researched": true,
+      "level": 0
+    },
+    "solar-energy": {
+      "researched": true,
+      "level": 0
+    },
+    "turrets": {
+      "researched": true,
+      "level": 0
+    },
+    "laser-turrets": {
+      "researched": true,
+      "level": 0
+    },
+    "stone-walls": {
+      "researched": true,
+      "level": 0
+    },
+    "gates": {
+      "researched": true,
+      "level": 0
+    },
+    "engine": {
+      "researched": true,
+      "level": 0
+    },
+    "electric-engine": {
+      "researched": true,
+      "level": 0
+    },
+    "battery": {
+      "researched": true,
+      "level": 0
+    },
+    "landfill": {
+      "researched": true,
+      "level": 0
+    },
+    "braking-force-1": {
+      "researched": true,
+      "level": 1
+    },
+    "braking-force-2": {
+      "researched": true,
+      "level": 2
+    },
+    "braking-force-3": {
+      "researched": true,
+      "level": 3
+    },
+    "braking-force-4": {
+      "researched": true,
+      "level": 4
+    },
+    "braking-force-5": {
+      "researched": true,
+      "level": 5
+    },
+    "braking-force-6": {
+      "researched": true,
+      "level": 6
+    },
+    "braking-force-7": {
+      "researched": true,
+      "level": 7
+    },
+    "steel-processing": {
+      "researched": true,
+      "level": 0
+    },
+    "advanced-material-processing": {
+      "researched": true,
+      "level": 0
+    },
+    "advanced-material-processing-2": {
+      "researched": true,
+      "level": 2
+    },
+    "concrete": {
+      "researched": true,
+      "level": 0
+    },
+    "electric-energy-accumulators-1": {
+      "researched": true,
+      "level": 1
+    },
+    "electric-energy-distribution-1": {
+      "researched": true,
+      "level": 1
+    },
+    "electric-energy-distribution-2": {
+      "researched": true,
+      "level": 2
+    },
+    "railway": {
+      "researched": true,
+      "level": 0
+    },
+    "fluid-wagon": {
+      "researched": true,
+      "level": 0
+    },
+    "automated-rail-transportation": {
+      "researched": true,
+      "level": 0
+    },
+    "rail-signals": {
+      "researched": true,
+      "level": 0
+    },
+    "flying": {
+      "researched": true,
+      "level": 0
+    },
+    "robotics": {
+      "researched": true,
+      "level": 0
+    },
+    "construction-robotics": {
+      "researched": true,
+      "level": 0
+    },
+    "logistic-robotics": {
+      "researched": true,
+      "level": 0
+    },
+    "logistic-system": {
+      "researched": true,
+      "level": 0
+    },
+    "personal-roboport-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "personal-roboport-equipment-2": {
+      "researched": true,
+      "level": 2
+    },
+    "character-logistic-slots-1": {
+      "researched": true,
+      "level": 1
+    },
+    "character-logistic-slots-2": {
+      "researched": true,
+      "level": 2
+    },
+    "character-logistic-slots-3": {
+      "researched": true,
+      "level": 3
+    },
+    "character-logistic-slots-4": {
+      "researched": true,
+      "level": 4
+    },
+    "character-logistic-slots-5": {
+      "researched": true,
+      "level": 5
+    },
+    "character-logistic-slots-6": {
+      "researched": true,
+      "level": 6
+    },
+    "character-logistic-trash-slots-1": {
+      "researched": true,
+      "level": 1
+    },
+    "worker-robots-speed-1": {
+      "researched": true,
+      "level": 1
+    },
+    "character-logistic-trash-slots-2": {
+      "researched": true,
+      "level": 2
+    },
+    "worker-robots-speed-2": {
+      "researched": true,
+      "level": 2
+    },
+    "auto-character-logistic-trash-slots": {
+      "researched": true,
+      "level": 0
+    },
+    "worker-robots-speed-3": {
+      "researched": true,
+      "level": 3
+    },
+    "worker-robots-speed-4": {
+      "researched": true,
+      "level": 4
+    },
+    "mining-productivity-1": {
+      "researched": true,
+      "level": 3
+    },
+    "mining-productivity-12": {
+      "researched": true,
+      "level": 15
+    },
+    "mining-productivity-4": {
+      "researched": true,
+      "level": 7
+    },
+    "mining-productivity-8": {
+      "researched": true,
+      "level": 11
+    },
+    "worker-robots-speed-5": {
+      "researched": true,
+      "level": 5
+    },
+    "worker-robots-storage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "worker-robots-storage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "worker-robots-storage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "toolbelt": {
+      "researched": true,
+      "level": 0
+    },
+    "research-speed-1": {
+      "researched": true,
+      "level": 1
+    },
+    "research-speed-2": {
+      "researched": true,
+      "level": 2
+    },
+    "research-speed-3": {
+      "researched": true,
+      "level": 3
+    },
+    "research-speed-4": {
+      "researched": true,
+      "level": 4
+    },
+    "research-speed-5": {
+      "researched": true,
+      "level": 5
+    },
+    "research-speed-6": {
+      "researched": true,
+      "level": 6
+    },
+    "stack-inserter": {
+      "researched": true,
+      "level": 0
+    },
+    "inserter-capacity-bonus-1": {
+      "researched": true,
+      "level": 1
+    },
+    "inserter-capacity-bonus-2": {
+      "researched": true,
+      "level": 2
+    },
+    "inserter-capacity-bonus-3": {
+      "researched": true,
+      "level": 3
+    },
+    "inserter-capacity-bonus-4": {
+      "researched": true,
+      "level": 4
+    },
+    "inserter-capacity-bonus-5": {
+      "researched": true,
+      "level": 5
+    },
+    "inserter-capacity-bonus-6": {
+      "researched": true,
+      "level": 6
+    },
+    "inserter-capacity-bonus-7": {
+      "researched": true,
+      "level": 7
+    },
+    "oil-processing": {
+      "researched": true,
+      "level": 0
+    },
+    "fluid-handling": {
+      "researched": true,
+      "level": 0
+    },
+    "advanced-oil-processing": {
+      "researched": true,
+      "level": 0
+    },
+    "coal-liquefaction": {
+      "researched": true,
+      "level": 0
+    },
+    "sulfur-processing": {
+      "researched": true,
+      "level": 0
+    },
+    "plastics": {
+      "researched": true,
+      "level": 0
+    },
+    "artillery": {
+      "researched": true,
+      "level": 0
+    },
+    "military": {
+      "researched": true,
+      "level": 0
+    },
+    "atomic-bomb": {
+      "researched": true,
+      "level": 0
+    },
+    "military-2": {
+      "researched": true,
+      "level": 2
+    },
+    "uranium-ammo": {
+      "researched": true,
+      "level": 0
+    },
+    "military-3": {
+      "researched": true,
+      "level": 3
+    },
+    "military-4": {
+      "researched": true,
+      "level": 4
+    },
+    "automobilism": {
+      "researched": true,
+      "level": 0
+    },
+    "flammables": {
+      "researched": true,
+      "level": 0
+    },
+    "flamethrower": {
+      "researched": true,
+      "level": 0
+    },
+    "tanks": {
+      "researched": true,
+      "level": 0
+    },
+    "land-mine": {
+      "researched": true,
+      "level": 0
+    },
+    "rocketry": {
+      "researched": true,
+      "level": 0
+    },
+    "explosive-rocketry": {
+      "researched": true,
+      "level": 0
+    },
+    "rocket-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "rocket-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "rocket-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "rocket-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "rocket-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "rocket-damage-6": {
+      "researched": true,
+      "level": 6
+    },
+    "rocket-speed-1": {
+      "researched": true,
+      "level": 1
+    },
+    "rocket-speed-2": {
+      "researched": true,
+      "level": 2
+    },
+    "rocket-speed-3": {
+      "researched": true,
+      "level": 3
+    },
+    "rocket-speed-4": {
+      "researched": true,
+      "level": 4
+    },
+    "rocket-speed-5": {
+      "researched": true,
+      "level": 5
+    },
+    "rocket-speed-6": {
+      "researched": true,
+      "level": 6
+    },
+    "rocket-speed-7": {
+      "researched": true,
+      "level": 7
+    },
+    "cannon-shell-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "cannon-shell-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "cannon-shell-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "cannon-shell-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "cannon-shell-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "cannon-shell-damage-6": {
+      "researched": false,
+      "level": 8
+    },
+    "cannon-shell-speed-1": {
+      "researched": true,
+      "level": 1
+    },
+    "cannon-shell-speed-2": {
+      "researched": true,
+      "level": 2
+    },
+    "cannon-shell-speed-3": {
+      "researched": true,
+      "level": 3
+    },
+    "cannon-shell-speed-4": {
+      "researched": true,
+      "level": 4
+    },
+    "cannon-shell-speed-5": {
+      "researched": true,
+      "level": 5
+    },
+    "bullet-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "bullet-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "bullet-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "bullet-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "bullet-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "bullet-damage-6": {
+      "researched": true,
+      "level": 6
+    },
+    "bullet-speed-1": {
+      "researched": true,
+      "level": 1
+    },
+    "bullet-speed-2": {
+      "researched": true,
+      "level": 2
+    },
+    "bullet-speed-3": {
+      "researched": true,
+      "level": 3
+    },
+    "bullet-speed-4": {
+      "researched": true,
+      "level": 4
+    },
+    "bullet-speed-5": {
+      "researched": true,
+      "level": 5
+    },
+    "bullet-speed-6": {
+      "researched": true,
+      "level": 6
+    },
+    "grenade-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "grenade-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "grenade-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "grenade-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "grenade-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "grenade-damage-6": {
+      "researched": true,
+      "level": 6
+    },
+    "laser-turret-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "shotgun-shell-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "laser-turret-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "shotgun-shell-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "laser-turret-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "shotgun-shell-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "laser-turret-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "shotgun-shell-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "laser-turret-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "shotgun-shell-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "laser-turret-damage-6": {
+      "researched": true,
+      "level": 6
+    },
+    "shotgun-shell-damage-6": {
+      "researched": true,
+      "level": 6
+    },
+    "laser-turret-damage-7": {
+      "researched": true,
+      "level": 7
+    },
+    "laser-turret-damage-8": {
+      "researched": false,
+      "level": 15
+    },
+    "shotgun-shell-speed-1": {
+      "researched": true,
+      "level": 1
+    },
+    "laser-turret-speed-1": {
+      "researched": true,
+      "level": 1
+    },
+    "shotgun-shell-speed-2": {
+      "researched": true,
+      "level": 2
+    },
+    "laser-turret-speed-2": {
+      "researched": true,
+      "level": 2
+    },
+    "shotgun-shell-speed-3": {
+      "researched": true,
+      "level": 3
+    },
+    "laser-turret-speed-3": {
+      "researched": true,
+      "level": 3
+    },
+    "shotgun-shell-speed-4": {
+      "researched": true,
+      "level": 4
+    },
+    "laser-turret-speed-4": {
+      "researched": true,
+      "level": 4
+    },
+    "shotgun-shell-speed-5": {
+      "researched": true,
+      "level": 5
+    },
+    "laser-turret-speed-5": {
+      "researched": true,
+      "level": 5
+    },
+    "shotgun-shell-speed-6": {
+      "researched": true,
+      "level": 6
+    },
+    "laser-turret-speed-6": {
+      "researched": true,
+      "level": 6
+    },
+    "laser-turret-speed-7": {
+      "researched": true,
+      "level": 7
+    },
+    "gun-turret-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "gun-turret-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "gun-turret-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "gun-turret-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "gun-turret-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "gun-turret-damage-6": {
+      "researched": true,
+      "level": 6
+    },
+    "flamethrower-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "flamethrower-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "flamethrower-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "flamethrower-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "flamethrower-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "flamethrower-damage-6": {
+      "researched": true,
+      "level": 6
+    },
+    "combat-robotics": {
+      "researched": true,
+      "level": 0
+    },
+    "combat-robotics-2": {
+      "researched": true,
+      "level": 2
+    },
+    "combat-robotics-3": {
+      "researched": true,
+      "level": 3
+    },
+    "follower-robot-count-1": {
+      "researched": true,
+      "level": 1
+    },
+    "follower-robot-count-2": {
+      "researched": true,
+      "level": 2
+    },
+    "follower-robot-count-3": {
+      "researched": true,
+      "level": 3
+    },
+    "follower-robot-count-4": {
+      "researched": true,
+      "level": 4
+    },
+    "follower-robot-count-5": {
+      "researched": true,
+      "level": 5
+    },
+    "follower-robot-count-6": {
+      "researched": true,
+      "level": 6
+    },
+    "kovarex-enrichment-process": {
+      "researched": true,
+      "level": 0
+    },
+    "nuclear-fuel-reprocessing": {
+      "researched": true,
+      "level": 0
+    },
+    "nuclear-power": {
+      "researched": true,
+      "level": 0
+    },
+    "combat-robot-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "combat-robot-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "combat-robot-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "combat-robot-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "combat-robot-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "heavy-armor": {
+      "researched": true,
+      "level": 0
+    },
+    "modular-armor": {
+      "researched": true,
+      "level": 0
+    },
+    "power-armor": {
+      "researched": true,
+      "level": 0
+    },
+    "power-armor-2": {
+      "researched": true,
+      "level": 2
+    },
+    "energy-shield-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "energy-shield-mk2-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "night-vision-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "exoskeleton-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "battery-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "battery-mk2-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "solar-panel-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "fusion-reactor-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "personal-laser-defense-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "discharge-defense-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "modules": {
+      "researched": true,
+      "level": 0
+    },
+    "speed-module": {
+      "researched": true,
+      "level": 0
+    },
+    "speed-module-2": {
+      "researched": true,
+      "level": 2
+    },
+    "speed-module-3": {
+      "researched": true,
+      "level": 3
+    },
+    "productivity-module": {
+      "researched": true,
+      "level": 0
+    },
+    "productivity-module-2": {
+      "researched": true,
+      "level": 2
+    },
+    "productivity-module-3": {
+      "researched": true,
+      "level": 3
+    },
+    "effectivity-module": {
+      "researched": true,
+      "level": 0
+    },
+    "effectivity-module-2": {
+      "researched": true,
+      "level": 2
+    },
+    "effectivity-module-3": {
+      "researched": true,
+      "level": 3
+    },
+    "effect-transmission": {
+      "researched": true,
+      "level": 0
+    },
+    "rocket-silo": {
+      "researched": true,
+      "level": 0
+    },
+    "cliff-explosives": {
+      "researched": true,
+      "level": 0
+    },
+    "logistic-train-network": {
+      "researched": true,
+      "level": 0
+    },
+    "recursive-blueprints": {
+      "researched": true,
+      "level": 0
+    },
+    "night-vision-mk2-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "personal-defense-damage-1": {
+      "researched": true,
+      "level": 1
+    },
+    "personal-defense-damage-2": {
+      "researched": true,
+      "level": 2
+    },
+    "personal-defense-damage-3": {
+      "researched": true,
+      "level": 3
+    },
+    "personal-defense-damage-4": {
+      "researched": true,
+      "level": 4
+    },
+    "personal-defense-damage-5": {
+      "researched": true,
+      "level": 5
+    },
+    "power-armor-mk3": {
+      "researched": true,
+      "level": 0
+    },
+    "power-armor-mk4": {
+      "researched": true,
+      "level": 0
+    },
+    "energy-shield-mk3-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "battery-mk3-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "belt-immunity-equipment": {
+      "researched": true,
+      "level": 0
+    },
+    "deepspace9-signal": {
+      "researched": true,
+      "level": 0
+    },
+    "deepspace9-techsync": {
+      "researched": true,
+      "level": 0
+    },
+    "deepspace9-electricity": {
+      "researched": true,
+      "level": 0
+    },
+    "deepspace9-silo": {
+      "researched": true,
+      "level": 0
+    },
+    "mining-productivity-16": {
+      "researched": false,
+      "level": 16
+    },
+    "worker-robots-speed-6": {
+      "researched": false,
+      "level": 6
+    },
+    "rocket-damage-7": {
+      "researched": false,
+      "level": 7
+    },
+    "artillery-shell-range-1": {
+      "researched": false,
+      "level": 1
+    },
+    "artillery-shell-speed-1": {
+      "researched": false,
+      "level": 1
+    },
+    "bullet-damage-7": {
+      "researched": false,
+      "level": 7
+    },
+    "grenade-damage-7": {
+      "researched": false,
+      "level": 7
+    },
+    "shotgun-shell-damage-7": {
+      "researched": false,
+      "level": 7
+    },
+    "gun-turret-damage-7": {
+      "researched": false,
+      "level": 7
+    },
+    "flamethrower-damage-7": {
+      "researched": false,
+      "level": 7
+    },
+    "follower-robot-count-7": {
+      "researched": false,
+      "level": 7
+    },
+    "combat-robot-damage-6": {
+      "researched": false,
+      "level": 6
+    }
+  },
+  "users": [
+    {
+      "id": "admin",
+      "accessToken": "testpass"
+    }
+  ]
+}

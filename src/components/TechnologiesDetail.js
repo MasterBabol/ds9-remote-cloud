@@ -9,7 +9,7 @@ class TechnologiesDetail extends React.Component {
         super(props);
         this.refreshCallback = null;
         this.options = {
-            noDataText: 'There is no signal to display'
+            noDataText: 'There is no technology to display'
         };
         this.state = {
             mounted: false,
