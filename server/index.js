@@ -80,7 +80,21 @@ server.timeout = 10000;
 server.keepAliveTimout = 15000;
 
 server.on('connection', function(socket) {
-    console.log('[!] Connection from: ' + socket.remoteAddress);
+    var remoteAddr = socket.remoteAddress;
+    socket.on('close', (hadError) => {
+        let e='', nq='', ns='';
+        if (hadError)
+            e = 'e';
+        if (!socket.request)
+            nq = 'q';
+        if (!socket.response)
+            ns = 's';
+        console.log('[!] A client socket (' + remoteAddr + ') had an error: ' + e+nq+ns);
+    });
+});
+server.on('request', function(req, res) {
+    req.socket.request = req;
+    req.socket.response = res;
 });
 
 server.listen(port, function() {
