@@ -61,4 +61,6 @@ typings/
 .next
 
 db.json
+build/
+public/bundle.js
 
