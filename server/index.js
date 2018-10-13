@@ -76,6 +76,10 @@ if(process.env.NODE_ENV == 'development') {
 
 const server = http.createServer(app);
 
+server.on('connection', function(socket) {
+    console.log('[!] Connection from: ' + socket.remoteAddress);
+});
+
 server.listen(port, function() {
     console.log('[!] Express is listening on port ' + port);
 });
