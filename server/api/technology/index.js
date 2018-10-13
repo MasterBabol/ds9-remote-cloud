@@ -59,7 +59,7 @@ router.post('/:id', (req, res) => {
         let mergedResearches = mergeTechnologies(gsigs.value(), newResearches);
         db.set('global-researches', mergedResearches).write();
 
-        res.status(200).end();
+        res.status(200).send({});
     }
     else
         res.status(404).end();

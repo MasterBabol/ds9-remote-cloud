@@ -10,7 +10,7 @@ router.get('/:id', (req, res) => {
     let le = db.get('local-estates').find({ id: leId });
     let leInfoRaw = le.value();
     if (leInfoRaw) {
-        res.status(200).end();
+        res.status(200).send({});
     }
     else
         res.status(404).end();
@@ -48,7 +48,7 @@ router.post('/:id', (req, res) => {
 
             les.push(newLe).write();
 
-            res.status(200).end();
+            res.status(200).send({});
         } catch (e) {
             if (isNaN(e))
                 res.status(500).end();
@@ -78,7 +78,7 @@ router.delete('/:id', (req, res) => {
 
             les.remove({ id: leId }).write();
 
-            res.status(200).end();
+            res.status(200).end({});
         } catch (e) {
             if (isNaN(e))
                 res.status(500).end();

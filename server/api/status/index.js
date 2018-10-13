@@ -51,7 +51,7 @@ router.post('/:id', (req, res) => {
             isNaN(memTotalMB))
             res.status(400).end();
         else
-            res.status(200).end();
+            res.status(200).send({});
     } else
         res.status(404).end();
 });
