@@ -20,7 +20,7 @@ const devPort = 4000;
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
-app.use(morgan('dev'));
+app.use(morgan('short'));
 app.use(express.json());
 
 app.use('/api', (req, res, next) => {
@@ -75,6 +75,9 @@ if(process.env.NODE_ENV == 'development') {
 }
 
 const server = http.createServer(app);
+
+server.timeout = 10000;
+server.keepAliveTimout = 15000;
 
 server.on('connection', function(socket) {
     console.log('[!] Connection from: ' + socket.remoteAddress);
