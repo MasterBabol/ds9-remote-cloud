@@ -60,7 +60,7 @@ router.post('/:id', function (req, res) {
         var memTotalMB = req.body['memTotalMB'];
         newStatus['memTotalMB'] = memTotalMB ? memTotalMB : -1;
         le.set('last-status', newStatus).write();
-        if (isNaN(cpuUse) || isNaN(memUse) || isNaN(memTotalMB)) res.status(400).end();else res.status(200).end();
+        if (isNaN(cpuUse) || isNaN(memUse) || isNaN(memTotalMB)) res.status(400).end();else res.status(200).send({});
     } else res.status(404).end();
 });
 

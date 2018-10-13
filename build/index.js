@@ -53,7 +53,7 @@ var devPort = 4000;
 var adapter = new _FileSync2.default('db.json');
 var db = (0, _lowdb2.default)(adapter);
 
-app.use((0, _morgan2.default)('dev'));
+app.use((0, _morgan2.default)('short'));
 app.use(_express2.default.json());
 
 app.use('/api', function (req, res, next) {
@@ -100,6 +100,26 @@ if (process.env.NODE_ENV == 'development') {
 }
 
 var server = _http2.default.createServer(app);
+
+server.timeout = 10000;
+server.keepAliveTimout = 15000;
+
+server.on('connection', function (socket) {
+    var remoteAddr = socket.remoteAddress;
+    socket.on('close', function (hadError) {
+        var e = '',
+            nq = '',
+            ns = '';
+        if (hadError) e = 'e';
+        if (!socket.request) nq = 'q';
+        if (!socket.response) ns = 's';
+        console.log('[!] A client socket (' + remoteAddr + ') had an error: ' + e + nq + ns);
+    });
+});
+server.on('request', function (req, res) {
+    req.socket.request = req;
+    req.socket.response = res;
+});
 
 server.listen(port, function () {
     console.log('[!] Express is listening on port ' + port);

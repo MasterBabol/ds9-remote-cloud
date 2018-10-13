@@ -89,7 +89,8 @@ server.on('connection', function(socket) {
             nq = 'q';
         if (!socket.response)
             ns = 's';
-        console.log('[!] A client socket (' + remoteAddr + ') had an error: ' + e+nq+ns);
+        if (e!=''||nq!=''||ns!='')
+            console.log('[!] A client socket (' + remoteAddr + ') had an error: ' + e+nq+ns);
     });
 });
 server.on('request', function(req, res) {

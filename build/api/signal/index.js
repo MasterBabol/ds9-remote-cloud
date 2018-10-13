@@ -50,7 +50,7 @@ router.post('/:id', function (req, res) {
         var added = _sigops2.default.addSignals(newGsignals, subtracted);
         db.set('global-announced-signals', added).write();
 
-        res.status(200).end();
+        res.status(200).send(subtracted);
     } else res.status(404).end();
 });
 

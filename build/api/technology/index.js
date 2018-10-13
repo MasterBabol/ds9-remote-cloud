@@ -63,17 +63,21 @@ var mergeTechnologies = function mergeTechnologies(dst, src) {
     return newDst;
 };
 
-router.get('/:id', function (req, res) {
-    var db = req.db.read();
-    var leId = req.params.id;
-    var le = db.get('local-estates').find({ id: leId });
+/*
+router.get('/:id', (req, res) => {
+    let db = req.db.read();
+    let leId = req.params.id;
+    let le = db.get('local-estates').find({ id: leId });
     if (le.value()) {
-        var leResearches = le.defaults({
+        let leResearches = le.defaults({
             'researches': {}
         }).get('researches').value();
         res.status(200).send(leResearches);
-    } else res.status(404).end();
+    }
+    else
+        res.status(404).end();
 });
+*/
 
 router.post('/:id', function (req, res) {
     var db = req.db.read();
@@ -81,17 +85,17 @@ router.post('/:id', function (req, res) {
     var le = db.get('local-estates').find({ id: leId });
     var gsigs = db.defaults(dbDefaultGlobalResearches).get('global-researches');
     if (le.value()) {
-        var leResearchesRaw = le.defaults({
+        /*let leResearchesRaw = le.defaults({
             'researches': {}
         }).get('researches');
-        var leResearches = leResearchesRaw.value();
+        let leResearches = leResearchesRaw.value();*/
 
         var newResearches = req.body;
-        le.set('researches', newResearches).write();
+        /*le.set('researches', newResearches).write();*/
         var mergedResearches = mergeTechnologies(gsigs.value(), newResearches);
         db.set('global-researches', mergedResearches).write();
 
-        res.status(200).end();
+        res.status(200).send({});
     } else res.status(404).end();
 });
 

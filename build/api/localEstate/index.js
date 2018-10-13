@@ -26,7 +26,7 @@ router.get('/:id', function (req, res) {
     var le = db.get('local-estates').find({ id: leId });
     var leInfoRaw = le.value();
     if (leInfoRaw) {
-        res.status(200).end();
+        res.status(200).send({});
     } else res.status(404).end();
 });
 
@@ -56,7 +56,7 @@ router.post('/:id', function (req, res) {
 
             les.push(newLe).write();
 
-            res.status(200).end();
+            res.status(200).send({});
         } catch (e) {
             if (isNaN(e)) res.status(500).end();else res.status(e).end();
         }
@@ -83,7 +83,7 @@ router.delete('/:id', function (req, res) {
 
             les.remove({ id: leId }).write();
 
-            res.status(200).end();
+            res.status(200).end({});
         } catch (e) {
             if (isNaN(e)) res.status(500).end();else res.status(e).end();
         }
