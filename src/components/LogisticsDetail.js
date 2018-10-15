@@ -67,7 +67,7 @@ class LogisticsDetail extends React.Component {
                 <TableHeaderColumn isKey dataField='name' dataSort>
                     Item Name
                 </TableHeaderColumn>
-                <TableHeaderColumn dataField='count' dataSort sortFunc={revertSort}>
+                <TableHeaderColumn dataField='count' dataSort sortFunc={this.revertSort}>
                     Item Count
                 </TableHeaderColumn>
             </BootstrapTable>
