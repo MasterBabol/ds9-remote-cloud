@@ -34,11 +34,15 @@ class LogisticsDetail extends React.Component {
 
     revertSort(a, b, order) {
         if (order == 'desc') {
-            return a.count - b.count;
-        }
-        else {
             return b.count - a.count;
         }
+        else {
+            return a.count - b.count;
+        }
+    }
+
+    numberFormat(cell, row) {
+        return cell.toLocaleString();
     }
 
     update() {
@@ -49,7 +53,7 @@ class LogisticsDetail extends React.Component {
                 for (var k of Object.keys(inv)) {
                     tableData.push({
                         name: k,
-                        count: Number(inv[k]).toLocaleString()
+                        count: Number(inv[k])
                     });
                 }
                 if (this.state.mounted)
@@ -67,7 +71,7 @@ class LogisticsDetail extends React.Component {
                 <TableHeaderColumn isKey dataField='name' dataSort>
                     Item Name
                 </TableHeaderColumn>
-                <TableHeaderColumn dataField='count' dataSort sortFunc={this.revertSort}>
+                <TableHeaderColumn dataField='count' dataSort sortFunc={this.revertSort} dataFormatter={this.numberFormat}>
                     Item Count
                 </TableHeaderColumn>
             </BootstrapTable>
