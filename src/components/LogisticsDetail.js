@@ -32,6 +32,15 @@ class LogisticsDetail extends React.Component {
         this.update();
     }
 
+    revertSort(a, b, order) {
+        if (order == 'desc') {
+            return a.count - b.count;
+        }
+        else {
+            return b.count - a.count;
+        }
+    }
+
     update() {
         axios.get('/api/inventory').then((res) => {
             let inv = res.data;
@@ -58,7 +67,7 @@ class LogisticsDetail extends React.Component {
                 <TableHeaderColumn isKey dataField='name' dataSort>
                     Item Name
                 </TableHeaderColumn>
-                <TableHeaderColumn dataField='count' dataSort>
+                <TableHeaderColumn dataField='count' dataSort sortFunc={revertSort}>
                     Item Count
                 </TableHeaderColumn>
             </BootstrapTable>
